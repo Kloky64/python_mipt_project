@@ -51,7 +51,7 @@ class Platform:
         Ограничивает движение платформы, не давая ей выйти за пределы окна.
         """
         pos = self.canvas.coords(self.plat)
-        shift = int(self.x * delta_time)
+        shift = self.x * delta_time
         if pos[0] + shift <= 0 or pos[2] + shift >= self.canvas_width:
             return
         self.canvas.move(self.plat, shift, 0)
